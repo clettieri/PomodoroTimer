@@ -23,6 +23,7 @@ $(document).ready(function(){
         //will set the time on the display object
         timeToShow = parseTime(durationInSeconds);
         display.text(timeToShow[0] + ' : ' + timeToShow[1]);
+        $(document).prop('title', '('+timeToShow[0]+':'+timeToShow[1]+') Pomodoro Timer');
     }
 
     function resetApp(display, duration) {
@@ -55,8 +56,7 @@ $(document).ready(function(){
                 if (timeRemaining < 0) {
                     clearInterval(timerObj);
                     display.text("DONE");
-                    //if was working, offer break
-                    //if was on break, offer work
+                    $(document).prop('title', 'DONE!!!');
                 }
             }
         }
