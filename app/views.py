@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request, session, flash, url_for, redirect
 from app import app
 
 @app.route('/')
@@ -14,6 +14,6 @@ def about():
 def contact():
     return render_template('contact.html',title='Pomodoro Timer')
 
-@app.route('/login')
+@app.route('/login', methods=['GET','POST'])
 def login():
     return render_template('login.html',title='Pomodoro Timer')
